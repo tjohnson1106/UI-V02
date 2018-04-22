@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Text, View, Platform } from "react-native";
 import { Icon } from "native-base";
 import { TabNavigator } from "react-navigation";
 
@@ -27,16 +27,36 @@ class MainScreen extends Component {
   }
 }
 
-const AppTabNavigator = TabNavigator({
-  HomeTab: {
-    screen: HomeTab
+const AppTabNavigator = TabNavigator(
+  {
+    HomeTab: {
+      screen: HomeTab
+    },
+    CameraTab: {
+      screen: CameraTab
+    },
+    CollectionsTab: {
+      screen: CollectionsTab
+    }
   },
-  CameraTab: {
-    screen: CameraTab
-  },
-  CollectionsTab: {
-    screen: CollectionsTab
+  {
+    animationEnabled: true,
+    swipeEnabled: true,
+    tabBarPosition: "bottom",
+    tabBarOptions: {
+      style: {
+        ...Platform.select({
+          android: {
+            backgroundColor: "white"
+          }
+        })
+      },
+      activeTintColor: "#000",
+      inactiveTintColor: "#d1cece",
+      showLabel: false,
+      showIcon: true
+    }
   }
-});
+);
 
 export default MainScreen;
