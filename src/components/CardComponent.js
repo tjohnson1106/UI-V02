@@ -16,15 +16,26 @@ class CardComponent extends Component {
             </Body>
           </Left>
         </CardItem>
-        <CardItem cardBody>
+        <CardItem cardBody bordered={true}>
           <Image
-            souce={require("../../assets/abstract.jpg")}
+            souce={require("../../assets/feed_one.jpeg")}
             style={{
               height: 200,
               width: null,
               flex: 1
             }}
           />
+        </CardItem>
+        <CardItem>
+          <Left>
+            <Button transparent>
+              <Icon
+                name="heart-outline"
+                ios="ios-heart-outline"
+                android="md-heart-outline"
+              />
+            </Button>
+          </Left>
         </CardItem>
       </Card>
     );
