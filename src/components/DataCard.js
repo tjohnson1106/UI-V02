@@ -2,29 +2,41 @@ import React, { Component } from "react";
 import { View, Image, Text } from "react-native";
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from "native-base";
 
-class CardComponent extends Component {
+class DataCard extends Component {
   render() {
+    const images = {
+      "2": require("../../assets/feed_two.jpeg"),
+      "3": require("../../assets/feed_three.jpeg"),
+      "4": require("../../assets/feed_four.jpeg")
+    };
+
     return (
       <Card>
         <CardItem>
           <Left>
             <Thumbnail source={require("../../assets/thumbnail.jpeg")} />
             <Body>
-              <Text>Name</Text>
-              <Text note>April 22, 2018</Text>
+              <Text>Varun </Text>
+              <Text note>Jan 15, 2018</Text>
             </Body>
           </Left>
         </CardItem>
-        <CardItem cardBody bordered={true} style={{ height: 135 }}>
+        <CardItem
+          cardBody
+          style={{
+            height: 135
+          }}
+        >
           <Image
-            souce={require("../../assets/feed_one.jpeg")}
+            souce={images[this.props.imageSource]}
             style={{
               height: 200,
-              width: null,
+              width: 200,
               flex: 1
             }}
           />
         </CardItem>
+
         <CardItem style={{ height: 45 }}>
           <Left>
             <Button transparent>
@@ -34,6 +46,13 @@ class CardComponent extends Component {
                 android="md-heart-outline"
                 style={{ fontSize: 25, color: "black", paddingLeft: 5 }}
               />
+              <Text
+                style={{
+                  height: 20
+                }}
+              >
+                {this.props.likes}
+              </Text>
             </Button>
           </Left>
           <Right>
@@ -51,4 +70,4 @@ class CardComponent extends Component {
   }
 }
 
-export default CardComponent;
+export default DataCard;

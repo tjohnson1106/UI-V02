@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Icon, Container, Content } from "native-base";
 
-import CardComponent from "../../components/CardComponent";
+import DataCard from "../../components/DataCard";
 
 class HomeTab extends Component {
   static navigationOptions = {
@@ -20,12 +20,19 @@ class HomeTab extends Component {
     return (
       <Container style={styles.container}>
         <Content>
-          <CardComponent />
+          <DataCard imageSource="2" likes=" 377" />
+          <DataCard imageSource="3" likes=" 90" />
+          <DataCard imageSource="4" likes=" 544" />
+          <DataCard imageSource="2" likes=" 377" />
+          <DataCard imageSource="3" likes=" 90" />
+          <DataCard imageSource="4" likes=" 544" />
         </Content>
       </Container>
     );
   }
 }
+
+export default HomeTab;
 
 const styles = StyleSheet.create({
   container: {
@@ -33,5 +40,3 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   }
 });
-
-export default HomeTab;
