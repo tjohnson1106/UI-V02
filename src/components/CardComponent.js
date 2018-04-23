@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View, Image, Text } from "react-native";
-
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from "native-base";
 
 class CardComponent extends Component {
@@ -16,7 +15,7 @@ class CardComponent extends Component {
             </Body>
           </Left>
         </CardItem>
-        <CardItem cardBody bordered={true}>
+        <CardItem cardBody bordered={true} style={{ height: 135 }}>
           <Image
             souce={require("../../assets/feed_one.jpeg")}
             style={{
@@ -26,16 +25,26 @@ class CardComponent extends Component {
             }}
           />
         </CardItem>
-        <CardItem>
+        <CardItem style={{ height: 45 }}>
           <Left>
             <Button transparent>
               <Icon
                 name="heart-outline"
                 ios="ios-heart-outline"
                 android="md-heart-outline"
+                style={{ fontSize: 25, color: "black", paddingLeft: 5 }}
               />
             </Button>
           </Left>
+          <Right>
+            <Button transparent>
+              <Icon
+                name="retweet"
+                type="EvilIcons"
+                style={{ fontSize: 30, color: "black", paddingRight: 5 }}
+              />
+            </Button>
+          </Right>
         </CardItem>
       </Card>
     );

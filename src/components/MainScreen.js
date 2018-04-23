@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Text, View, Platform } from "react-native";
 import { Icon } from "native-base";
 import { TabNavigator } from "react-navigation";
+import { LinearGradient } from "expo";
 
 import CameraTab from "../screens/appTabNavigator/CameraTab";
 import CollectionsTab from "../screens/appTabNavigator/CollectionsTab";
@@ -21,7 +22,6 @@ class MainScreen extends Component {
     headerRight: <Icon name="people" style={{ paddingRight: 10 }} />
   };
 
-  state = {};
   render() {
     return <AppTabNavigator />;
   }
