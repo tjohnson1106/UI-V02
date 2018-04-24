@@ -9,16 +9,7 @@ import HomeTab from "../screens/appTabNavigator/HomeTab";
 
 class MainScreen extends Component {
   static navigationOptions = {
-    headerLeft: (
-      <Icon
-        name="search"
-        ios="ios-search"
-        android="md-search"
-        style={{ paddingLeft: 10 }}
-      />
-    ),
-    title: "Vision",
-    headerRight: <Icon name="people" style={{ paddingRight: 10 }} />
+    header: null
   };
 
   render() {

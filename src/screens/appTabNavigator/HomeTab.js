@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Icon, Container, Content } from "native-base";
+import { Icon, Container, Content, Header, Left, Right } from "native-base";
 
 import DataCard from "../../components/DataCard";
 
@@ -19,6 +19,19 @@ class HomeTab extends Component {
   render() {
     return (
       <Container style={styles.container}>
+        <Header>
+          <Left>
+            <Icon
+              name="search"
+              ios="ios-search"
+              android="md-search"
+              style={{ paddingLeft: 10 }}
+            />
+          </Left>
+          <Right>
+            <Icon name="people" style={{ paddingRight: 10 }} />
+          </Right>
+        </Header>
         <Content>
           <DataCard imageSource="2" likes=" 377" />
           <DataCard imageSource="3" likes=" 90" />

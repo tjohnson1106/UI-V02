@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import { Icon } from "native-base";
+import { Icon, Container, Content, Header, Left, Right, Body } from "native-base";
 
 class CollectionsTab extends Component {
   static navigationOptions = {
