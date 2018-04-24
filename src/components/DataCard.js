@@ -11,13 +11,17 @@ class DataCard extends Component {
     };
 
     return (
-      <Card>
+      <Card
+        style={{
+          backgroundColor: "#0AC2C2"
+        }}
+      >
         <CardItem>
           <Left>
             <Thumbnail source={require("../../assets/thumbnail.jpeg")} />
             <Body>
-              <Text>Varun </Text>
-              <Text note>Jan 15, 2018</Text>
+              <Text>User / Data in Card </Text>
+              <Text note>April 23, 2018</Text>
             </Body>
           </Left>
         </CardItem>
@@ -31,7 +35,7 @@ class DataCard extends Component {
             souce={images[this.props.imageSource]}
             style={{
               height: 200,
-              width: 200,
+              width: null,
               flex: 1
             }}
           />
