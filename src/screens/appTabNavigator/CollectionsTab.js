@@ -15,6 +15,10 @@ class CollectionsTab extends Component {
     )
   };
 
+  state = {
+    activeIndex: 0
+  };
+
   render() {
     return (
       <Container style={{ flex: 1, backgroundColor: "white" }}>
@@ -40,7 +44,7 @@ class CollectionsTab extends Component {
         <Content>
           <View>
             <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
-              <View style={{ flex: 1 }}>
+              <View style={{ flex: 1, paddingTop: 10, left: 5 }}>
                 <Image
                   source={require("../../../assets/profile_one.jpeg")}
                   style={{
@@ -57,6 +61,55 @@ class CollectionsTab extends Component {
                 <Text>username</Text>
                 <Text>edit profile</Text>
               </View>
+            </View>
+          </View>
+          <View>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-around",
+                borderTopWidth: 1,
+                color: "#eae5e5"
+              }}
+            >
+              <Button transparent>
+                <Icon
+                  name="reorder-vertical"
+                  type="MaterialCommunityIcons"
+                  style={{ color: "#3a4e85" }}
+                />
+              </Button>
+              <Button
+                transparent
+                onPress={() => this.segmentClicked(0)}
+                active={this.state.activeIndex == 0}
+              >
+                <Icon
+                  name="reorder-horizontal"
+                  type="MaterialCommunityIcons"
+                  style={[
+                    this.state.activeIndex == 0
+                      ? { color: "#3a4e85" }
+                      : {
+                          color: "grey"
+                        }
+                  ]}
+                />
+              </Button>
+              <Button transparent>
+                <Icon
+                  name="panorama-vertical"
+                  type="MaterialCommunityIcons"
+                  style={{ color: "#3a4e85" }}
+                />
+              </Button>
+              <Button transparent>
+                <Icon
+                  name="panorama-horizontal"
+                  type="MaterialCommunityIcons"
+                  style={{ color: "#3a4e85" }}
+                />
+              </Button>
             </View>
           </View>
         </Content>
