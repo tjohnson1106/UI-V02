@@ -1,7 +1,21 @@
 import React, { Component } from "react";
-import { View, Text, Image } from "react-native";
-
+import { View, Text, Image, Dimensions } from "react-native";
 import { Icon, Container, Content, Header, Left, Right, Body, Button } from "native-base";
+import DataCard from "../../components/DataCard";
+
+let image = [
+  require("../../../assets/collections_one.jpeg"),
+  require("../../../assets/collections_two.jpeg"),
+  require("../../../assets/collections_three.jpeg"),
+  require("../../../assets/collections_four.jpeg"),
+  require("../../../assets/collections_five.jpeg"),
+  require("../../../assets/collections_six.jpeg"),
+  require("../../../assets/collections_seven.jpeg"),
+  require("../../../assets/collections_eight.jpeg"),
+  require("../../../assets/collections_nine.jpeg")
+];
+
+let { width, height } = Dimensions.get("window");
 
 class CollectionsTab extends Component {
   static navigationOptions = {
@@ -15,8 +29,55 @@ class CollectionsTab extends Component {
     )
   };
 
-  state = {
-    activeIndex: 0
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeIndex: 0
+    };
+  }
+
+  segmentClicked = index => {
+    this.setState({
+      activeIndex: index
+    });
+  };
+  renderSectionOne = () => {
+    return images.map((image, index) => {
+      return (
+        <View
+          key={index}
+          style={[
+            { width: width / 3 },
+            { height: width / 3 },
+            { marginBottom: 2 },
+            index % 3 !== 0 ? { paddingLeft: 2 } : { paddingLeft: 0 }
+          ]}
+        >
+          <Image
+            style={{ flex: 1, width: undefined, height: undefined }}
+            source={image}
+          />
+        </View>
+      );
+    });
+  };
+
+  renderSection = () => {
+    if (this.state.activeIndex === 0) {
+      return (
+        <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          {this.renderSectionOne()}
+        </View>
+      );
+    } else if (this.state.activeIndex == 1) {
+      return;
+      <View>
+        <DataCard imageSource="1" likes="100" />
+        <DataCard imageSource="2" likes="150" />
+        <DataCard imageSource="3" likes="140" />
+      </View>;
+    }
   };
 
   render() {
@@ -68,24 +129,16 @@ class CollectionsTab extends Component {
               style={{
                 flexDirection: "row",
                 justifyContent: "space-around",
-                borderTopWidth: 1,
-                color: "#eae5e5"
+                borderTopWidth: 1
               }}
             >
-              <Button transparent>
-                <Icon
-                  name="reorder-vertical"
-                  type="MaterialCommunityIcons"
-                  style={{ color: "#3a4e85" }}
-                />
-              </Button>
               <Button
                 transparent
                 onPress={() => this.segmentClicked(0)}
                 active={this.state.activeIndex == 0}
               >
                 <Icon
-                  name="reorder-horizontal"
+                  name="reorder-vertical"
                   type="MaterialCommunityIcons"
                   style={[
                     this.state.activeIndex == 0
@@ -96,18 +149,55 @@ class CollectionsTab extends Component {
                   ]}
                 />
               </Button>
-              <Button transparent>
+              <Button
+                transparent
+                onPress={() => this.segmentClicked(1)}
+                active={this.state.activeIndex == 1}
+              >
+                <Icon
+                  name="reorder-horizontal"
+                  type="MaterialCommunityIcons"
+                  style={[
+                    this.state.activeIndex == 1
+                      ? { color: "#3a4e85" }
+                      : {
+                          color: "grey"
+                        }
+                  ]}
+                />
+              </Button>
+              <Button
+                transparent
+                onPress={() => this.segmentClicked(2)}
+                active={this.state.activeIndex == 2}
+              >
                 <Icon
                   name="panorama-vertical"
                   type="MaterialCommunityIcons"
-                  style={{ color: "#3a4e85" }}
+                  style={[
+                    this.state.activeIndex == 2
+                      ? { color: "#3a4e85" }
+                      : {
+                          color: "grey"
+                        }
+                  ]}
                 />
               </Button>
-              <Button transparent>
+              <Button
+                transparent
+                onPress={() => this.segmentClicked(3)}
+                active={this.state.activeIndex == 3}
+              >
                 <Icon
                   name="panorama-horizontal"
                   type="MaterialCommunityIcons"
-                  style={{ color: "#3a4e85" }}
+                  style={[
+                    this.state.activeIndex == 3
+                      ? { color: "#3a4e85" }
+                      : {
+                          color: "grey"
+                        }
+                  ]}
                 />
               </Button>
             </View>
