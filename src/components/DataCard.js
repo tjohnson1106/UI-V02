@@ -18,7 +18,7 @@ class DataCard extends Component {
       >
         <CardItem>
           <Left>
-            <Thumbnail source={require("../../assets/thumbnail.jpeg")} />
+            <Thumbnail source={require("../../assets/th 'expo';umbnail.jpeg")} />
             <Body>
               <Text>User / Data in Card </Text>
               <Text note>April 23, 2018</Text>
@@ -34,7 +34,7 @@ class DataCard extends Component {
           <Image
             souce={images[this.props.imageSource]}
             style={{
-              height: 200,
+              height: null,
               width: null,
               flex: 1
             }}

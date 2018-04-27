@@ -54,10 +54,7 @@ class CollectionsTab extends Component {
             index % 3 !== 0 ? { paddingLeft: 2 } : { paddingLeft: 0 }
           ]}
         >
-          <Image
-            style={{ flex: 1, width: undefined, height: undefined }}
-            source={image}
-          />
+          <Image style={{ flex: 1, width: 720 }} source={image} />
         </View>
       );
     });
