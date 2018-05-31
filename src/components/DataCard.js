@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import { View, Image, Text } from "react-native";
-import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from "native-base";
+import {
+  Card,
+  CardItem,
+  Thumbnail,
+  Body,
+  Left,
+  Right,
+  Button,
+  Icon
+} from "native-base";
 
 class DataCard extends Component {
   render() {
@@ -18,7 +27,9 @@ class DataCard extends Component {
       >
         <CardItem>
           <Left>
-            <Thumbnail source={require("../../assets/th 'expo';umbnail.jpeg")} />
+            <Thumbnail
+              source={require("../../assets/thumbnail.jpeg")}
+            />
             <Body>
               <Text>User / Data in Card </Text>
               <Text note>April 23, 2018</Text>
@@ -48,7 +59,11 @@ class DataCard extends Component {
                 name="heart-outline"
                 ios="ios-heart-outline"
                 android="md-heart-outline"
-                style={{ fontSize: 25, color: "black", paddingLeft: 5 }}
+                style={{
+                  fontSize: 25,
+                  color: "black",
+                  paddingLeft: 5
+                }}
               />
               <Text
                 style={{
@@ -64,7 +79,11 @@ class DataCard extends Component {
               <Icon
                 name="retweet"
                 type="EvilIcons"
-                style={{ fontSize: 30, color: "black", paddingRight: 5 }}
+                style={{
+                  fontSize: 30,
+                  color: "black",
+                  paddingRight: 5
+                }}
               />
             </Button>
           </Right>
